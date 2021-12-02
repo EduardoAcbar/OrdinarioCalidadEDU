@@ -1,14 +1,11 @@
 package com.anahuac.calidad.funcionales.mern;
 //EAB
-import java.util.Random;
+
 import java.util.concurrent.TimeUnit;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.*;
-
-import java.util.concurrent.TimeUnit;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +15,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
@@ -121,7 +117,7 @@ public class MernCrudTest {
 	
 	
 	@Test
-	public void RetreiveInfo() throws Exception {
+	public void SearchInfo() throws Exception {
 
 		driver.get(baseUrl);
 		usuarioDefault();
