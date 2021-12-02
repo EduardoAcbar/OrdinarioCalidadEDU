@@ -80,7 +80,7 @@ public class FakeDAOTest {
 	@Test
 	public void deleteAlumnoTest(){
 		alumnos.put("001", alumno1);
-		System.out.println("\t Borrar Alumno");
+		System.out.println("\t Delete Alumno");
 		int antes_cantidad = alumnos.size();
 		System.out.println("Size antes : " + antes_cantidad);
 
@@ -105,13 +105,12 @@ public class FakeDAOTest {
 
 	@Test
 	public void retreiveAlumnoTest() { 			
-		System.out.println("Search Alumno"); 
+		System.out.println("\t Retreive Alumno"); 
 		when(dao.Alumno_retreive(anyString())).thenAnswer(new Answer<Alumno>() 
 		{
 			public Alumno answer(InvocationOnMock invocation) throws Throwable
 			{
 				String arg = (String) invocation.getArguments()[0]; 
-
 				return alumno1; 
 			}
 		}
@@ -126,13 +125,13 @@ public class FakeDAOTest {
 
 	@Test
 	public void updateAlumnoTest() {
-		System.out.println("Update mail");
+		System.out.println("\t Update mail");
 		alumnos.put(alumno1.getID(),alumno1);
 		String emailBefore= alumno1.getEmail();
 
 		System.out.println("The last email was: "+emailBefore);
 		alumno1 = new Alumno("001","Nombre",20, "nuevocorreo@outlook.com");
-		//
+/*
 		when(dao.Email_update(any(Alumno.class))).thenAnswer(new Answer<Boolean>() {
 			public Boolean answer(InvocationOnMock invocation) throws Throwable{
 				Alumno arg = (Alumno) invocation.getArguments()[0]; 
@@ -140,7 +139,7 @@ public class FakeDAOTest {
 				return null; 
 			}
 		}
-				);
+				);*/
 		//
 		doAnswer(new Answer(){
 			public Object answer(InvocationOnMock invocation){
@@ -149,11 +148,11 @@ public class FakeDAOTest {
 				return null;
 			}
 		}).when(dao).Email_update(any(Alumno.class));
-
+		
 		dao.Email_update(alumno1);
 		String emailAfter = alumnos.get(alumno1.getID()).getEmail();
 		System.out.println("Updated mail : " + emailAfter);
-
+		//compara mails
 		assertThat(emailBefore, is(not(emailAfter)));
 
 	}
