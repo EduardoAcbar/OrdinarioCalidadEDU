@@ -136,7 +136,7 @@ public class MernCrudTest {
 
 
 public  void usuarioDefault() {
-	//driver.get(baseUrl);
+	//driver.get(baseUrl); el metodo que llame a este, ya ejecuta el llamado al browser
 	driver.findElement(By.xpath("/html/body/div/div/div[2]/button")).click();
 	driver.findElement(By.name("name")).click();
 	driver.findElement(By.name("name")).clear();
