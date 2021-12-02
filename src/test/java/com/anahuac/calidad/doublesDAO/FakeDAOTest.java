@@ -29,7 +29,7 @@ public class FakeDAOTest {
 	Alumno alumno1;
 
 	@Before
-	public void setUp() throws Exception {
+	public void SetUp() throws Exception {
 		dao = Mockito.mock(FakeDAO.class);
 		alumnos = new HashMap<String, Alumno>();
 		alumno1 = new Alumno("001","Nombre",20,  "Dudu@outlook.com");
