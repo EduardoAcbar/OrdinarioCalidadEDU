@@ -97,7 +97,7 @@ public class MernCrudTest {
 		
 		//verificar q si se haya actualizado al info ingersada
 		String nametag = driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr[1]/td[1]")).getText();
-        assertThat("Eduardo Acevedo", is(nametag));
+        assertThat("Eduardo Barajas", is(nametag));
 	}
 
 
